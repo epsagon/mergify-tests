@@ -1,3 +1,3 @@
 # mergify-tests
 
-This is attempt number 1
+This is attempt number 2
