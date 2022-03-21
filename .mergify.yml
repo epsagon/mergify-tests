@@ -19,7 +19,7 @@ queue_rules:
     batch_size: 5
 
 pull_request_rules:
-  - name: automatic merge-v1
+  - name: automatic merge
     conditions:
       - base=main
       # - "#approved-reviews-by>=1"
