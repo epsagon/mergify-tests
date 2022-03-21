@@ -24,19 +24,17 @@ pull_request_rules:
       - base=main
       # - "#approved-reviews-by>=1"
       - "#changes-requested-reviews-by=0"
-      - "#commits=1"
       - label=merge when ready
     actions:
       queue:
         name: default
-        priority: medium
+        # priority: medium
 
   # - name: automatic merge for urgent priority PRs
   #   conditions:
   #     - base=main
   #     # - "#approved-reviews-by>=1"
   #     - "#changes-requested-reviews-by=0"
-  #     - "#commits=1"
   #     - label=urgent priority
   #   actions:
   #     queue:
