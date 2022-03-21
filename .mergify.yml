@@ -11,12 +11,12 @@ queue_rules:
   - name: default
     conditions:
       - author=ophiryael
-    batch_size: 5
+    # batch_size: 5
 
-  - name: urgent
-    conditions:
-      - author=ophiryael
-    batch_size: 5
+  # - name: urgent
+  #   conditions:
+  #     - author=ophiryael
+  #   batch_size: 5
 
 pull_request_rules:
   - name: automatic merge
@@ -24,35 +24,33 @@ pull_request_rules:
       - base=main
       # - "#approved-reviews-by>=1"
       - "#changes-requested-reviews-by=0"
-      - "#commits=1"
       - label=merge when ready
     actions:
       queue:
         name: default
-        priority: medium
+        # priority: medium
 
-  - name: automatic merge for urgent priority PRs
-    conditions:
-      - base=main
-      # - "#approved-reviews-by>=1"
-      - "#changes-requested-reviews-by=0"
-      - "#commits=1"
-      - label=urgent priority
-    actions:
-      queue:
-        name: urgent
-        priority: high
+  # - name: automatic merge for urgent priority PRs
+  #   conditions:
+  #     - base=main
+  #     # - "#approved-reviews-by>=1"
+  #     - "#changes-requested-reviews-by=0"
+  #     - label=urgent priority
+  #   actions:
+  #     queue:
+  #       name: urgent
+  #       priority: high
 
-  - name: warn on conflicts
-    conditions:
-      - conflict
-      - -closed
-    actions:
-      comment:
-        message: "@{{author}} This PR is now in conflict"
-      label:
-        add:
-          - conflict
+  # - name: warn on conflicts
+  #   conditions:
+  #     - conflict
+  #     - -closed
+  #   actions:
+  #     comment:
+  #       message: "@{{author}} This PR is now in conflict"
+  #     label:
+  #       add:
+  #         - conflict
 
   - name: remove conflict label if not needed
     conditions:
