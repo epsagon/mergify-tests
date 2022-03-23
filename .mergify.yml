@@ -10,17 +10,20 @@ defaults:
 queue_rules:
   - name: default
     conditions:
+      # add checks
       - author=ophiryael
     batch_size: 5
 
   - name: urgent
     conditions:
+      # add checks
       - author=ophiryael
     batch_size: 5
 
 pull_request_rules:
-  - name: automatic merge
+  - name: automatic merge default priority PRs
     conditions:
+      # add checks
       - base=master
       # - "#approved-reviews-by>=1"
       - "#changes-requested-reviews-by=0"
@@ -30,8 +33,9 @@ pull_request_rules:
         name: default
         priority: medium
 
-  - name: automatic merge for urgent priority PRs
+  - name: automatic merge urgent priority PRs
     conditions:
+      # add checks
       - base=master
       # - "#approved-reviews-by>=1"
       - "#changes-requested-reviews-by=0"
