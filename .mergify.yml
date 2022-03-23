@@ -8,37 +8,24 @@ defaults:
         {{ body }}
 
 queue_rules:
-  - name: default
+  - name: urgent
     conditions:
-      # add checks
-      - author=ophiryael
+      - and: &Checks
+          - check-success=sleep
     batch_size: 5
     allow_inplace_checks: false
 
-  - name: urgent
+  - name: default
     conditions:
-      # add checks
-      - author=ophiryael
+      - and: *Checks
     batch_size: 5
     allow_inplace_checks: false
 
 pull_request_rules:
-  - name: automatic merge default priority PRs
-    conditions:
-      # add checks
-      - base=master
-      # - "#approved-reviews-by>=1"
-      - "#changes-requested-reviews-by=0"
-      - label=merge when ready
-    actions:
-      queue:
-        name: default
-        priority: medium
-
   - name: automatic merge urgent priority PRs
     conditions:
-      # add checks
       - base=master
+      - and: *Checks
       # - "#approved-reviews-by>=1"
       - "#changes-requested-reviews-by=0"
       - label=merge when ready
@@ -47,6 +34,18 @@ pull_request_rules:
       queue:
         name: urgent
         priority: high
+
+  - name: automatic merge default priority PRs
+    conditions:
+      - base=master
+      - and: *Checks
+      # - "#approved-reviews-by>=1"
+      - "#changes-requested-reviews-by=0"
+      - label=merge when ready
+    actions:
+      queue:
+        name: default
+        priority: medium
 
   - name: warn on conflicts
     conditions:
