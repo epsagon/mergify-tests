@@ -13,12 +13,14 @@ queue_rules:
       # add checks
       - author=ophiryael
     batch_size: 5
+    allow_inplace_checks: false
 
   - name: urgent
     conditions:
       # add checks
       - author=ophiryael
     batch_size: 5
+    allow_inplace_checks: false
 
 pull_request_rules:
   - name: automatic merge default priority PRs
