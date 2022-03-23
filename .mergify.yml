@@ -12,6 +12,7 @@ queue_rules:
     conditions:
       - and: &Checks
           - check-success=sleep
+          - author=ophiryael
     batch_size: 5
     allow_inplace_checks: false
 
