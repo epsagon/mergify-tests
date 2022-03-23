@@ -7,7 +7,7 @@ Tests:
 - [x] Test squash merge
 - [x] Batching multiple PRs
 - [x] Native GitHub revert button after batch merge
-- [ ] Check queue priority
+- [x] Check queue priority
 - [ ] Warns on conflicts (comment + tag)
 - [ ] Removes conflict tag when resolved
 - [ ] Warns when urgent PR failing CI
