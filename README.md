@@ -10,6 +10,6 @@ Tests:
 - [x] Check queue priority
 - [x] Warns on conflicts (comment + tag)
 - [x] Removes conflict tag when resolved
-- [ ] Cancels already queued PR when conditions change
-- [ ] Warns when urgent PR failing CI
+- [x] Cancels already queued PR when conditions change
+- [x] Warns when urgent PR failing CI
 - [ ] Comment merge instructions on each PR
