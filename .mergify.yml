@@ -84,9 +84,9 @@ pull_request_rules:
         message: |
           ## Merge instructions
           - Do NOT use the native GitHub merge button
-          - Add the `merge when ready` tag to automatically merge the PR once it passes code-review and required checks
-          - Add the `urgent priority` tag to move the PR up to the top of the merge queue (urgent PRs only)
+          - Add the `merge when ready` label to automatically merge the PR once it passes code-review and required checks
+          - Add the `urgent priority` label to move the PR up to the top of the merge queue (urgent PRs only)
 
           ### Useful info
-          - Remove the `merge when ready` tag to remove the PR from the queue
+          - Remove the `merge when ready` label to remove the PR from the queue
           - Comment `@Mergifyio refresh` to reevaluate the merge conditions (useful for troubleshooting)
