@@ -69,8 +69,20 @@ pull_request_rules:
 
   - name: warn on CI failure for urgent merge
     conditions:
+      - label=merge when ready
       - label=urgent priority
       - "#check-failure>0"
     actions:
       comment:
         message: "@{{author}} Your urgent priority PR is failing CI"
+
+  - name: merge instructions
+    conditions:
+      - base=master
+    actions:
+      comment:
+        message: |
+          Merge instructions:
+          - Do NOT use the native GitHub merge button
+          - Add the "merge when ready" tag to automatically merge your PR once it passes code-review and required checks
+          - Add the "urgent priority" tag to move your PR up to the top of the queue (use wisely, for urgent PRs only)
