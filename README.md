@@ -12,4 +12,4 @@ Tests:
 - [x] Removes conflict tag when resolved
 - [x] Cancels already queued PR when conditions change
 - [x] Warns when urgent PR failing CI
-- [ ] Comment merge instructions on each PR
+- [x] Comment merge instructions on each PR
