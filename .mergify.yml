@@ -82,7 +82,7 @@ pull_request_rules:
     actions:
       comment:
         message: |
-          ### Merge instructions
+          ## Merge instructions
           - Do NOT use the native GitHub merge button
           - Add the `merge when ready` tag to automatically merge the PR once it passes code-review and required checks
           - Add the `urgent priority` tag to move the PR up to the top of the queue (use wisely, for urgent PRs only)
