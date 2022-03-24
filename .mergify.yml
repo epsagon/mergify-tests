@@ -12,6 +12,7 @@ queue_rules:
     conditions:
       - and: &Checks
           - author=ophiryael
+          - base=main
     batch_size: 5
     allow_inplace_checks: false
 
