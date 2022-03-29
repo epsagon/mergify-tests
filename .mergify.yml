@@ -90,3 +90,9 @@ pull_request_rules:
           ### Useful info
           - Remove the `merge when ready` label to remove the PR from the queue
           - Comment `@Mergifyio refresh` to reevaluate the merge conditions (useful for troubleshooting)
+
+  - name: delete head branch after merge
+    conditions:
+      - merged
+    actions:
+      delete_head_branch:
