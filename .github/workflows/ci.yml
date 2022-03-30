@@ -8,6 +8,7 @@ on:
 jobs:
   sleep:
     runs-on: ubuntu-latest
+    if: ${{ startsWith(github.event.pull_request.title, 'merge-queue') }}
     steps:
       - name: Sleep for 1 minute
-        run: sleep 60
+        run: if (( RANDOM % 2 )); then return  0; else return  1; fi
