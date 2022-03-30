@@ -11,6 +11,7 @@ queue_rules:
   - name: urgent
     conditions:
       - and: &Checks
+          - base=master
           - author=ophiryael
     batch_size: 5
     allow_inplace_checks: false
@@ -24,7 +25,6 @@ queue_rules:
 pull_request_rules:
   - name: automatic merge urgent priority PRs
     conditions:
-      - base=master
       - and: *Checks
       # - "#approved-reviews-by>=1"
       - "#changes-requested-reviews-by=0"
@@ -37,7 +37,6 @@ pull_request_rules:
 
   - name: automatic merge default priority PRs
     conditions:
-      - base=master
       - and: *Checks
       # - "#approved-reviews-by>=1"
       - "#changes-requested-reviews-by=0"
