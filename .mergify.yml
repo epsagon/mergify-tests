@@ -11,7 +11,6 @@ queue_rules:
   - name: urgent
     conditions:
       - and: &Checks
-          - check-success=sleep
           - author=ophiryael
     batch_size: 5
     allow_inplace_checks: false
